@@ -1,0 +1,6 @@
+framework module Pods_StackCardView_Example {
+  umbrella header "Pods-StackCardView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
