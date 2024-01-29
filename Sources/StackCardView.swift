@@ -10,6 +10,6 @@ import SwiftUI
 
 struct StackCardView: View {
     var body: some View {
-        Text("StackCard View Implementation comes here")
+        Text("Stack View Implementation")
     }
 }
