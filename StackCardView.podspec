@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/badrinathvm/StackCardView.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/badrivm'
   s.ios.deployment_target = '13.0'
-  s.source_files = 'StackCardView/**/*.swift'
+  s.source_files     = 'Sources/**/*.swift'
   
   # s.resource_bundles = {
   #   'StackCardView' => ['StackCardView/Assets/*.png']
