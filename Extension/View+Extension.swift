@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-extension View {
+public extension View {
     
     func eraseToAnyView() -> AnyView{
         AnyView(self)

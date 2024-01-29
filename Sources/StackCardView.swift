@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 
-struct StackCard<Content: View, T: Identifiable>: View {
+public struct StackCard<Content: View, T: Identifiable>: View {
     private var content: () -> Content
     private var model: T
     
@@ -41,7 +41,7 @@ struct StackCard<Content: View, T: Identifiable>: View {
     }
     
     
-    var body: some View {
+    public var body: some View {
         GeometryReader { proxy in
             ZStack {
                 content()

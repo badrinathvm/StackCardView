@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum StackCardDisplayType: CaseIterable {
+public enum StackCardDisplayType: CaseIterable {
     case top, bottom
 }
 

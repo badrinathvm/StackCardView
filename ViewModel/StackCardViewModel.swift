@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-protocol StackCardModelProtocol {
+public protocol StackCardModelProtocol {
     associatedtype CardType
     var id: String { get set }
 }
@@ -18,7 +18,7 @@ protocol StackCardViewModelProtocol {
 }
 
 extension StackCardViewModel: StackCardViewModelProtocol {
-    func removeCard() {
+    public func removeCard() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let _ = self.displayingCards?.first {
                 let _ = withAnimation {
@@ -29,10 +29,14 @@ extension StackCardViewModel: StackCardViewModelProtocol {
     }
 }
 
-class StackCardViewModel<T: StackCardModelProtocol>: ObservableObject {
+public class StackCardViewModel<T: StackCardModelProtocol>: ObservableObject {
     @Published var cards: [T] = []
-    @Published var displayingCards: [T]?
+    @Published public var displayingCards: [T]?
     
+    public init(cards: [T] = [], displayingCards: [T]? = nil) {
+        self.cards = cards
+        self.displayingCards = displayingCards
+    }
     
     /**
      Returns the index of the specified card within the displayingCards array.
@@ -46,7 +50,7 @@ class StackCardViewModel<T: StackCardModelProtocol>: ObservableObject {
      The `getIndex` method searches for the specified card within the displayingCards array and returns its index as a CGFloat. If the card is not found, the method defaults to returning 0.
     */
 
-    func getIndex(type card: T) -> CGFloat {
+    public func getIndex(type card: T) -> CGFloat {
         return CGFloat(displayingCards?.firstIndex { $0.id == card.id } ?? 0)
     }
     
@@ -66,7 +70,7 @@ class StackCardViewModel<T: StackCardModelProtocol>: ObservableObject {
 
      The final calculated offset is returned as a CGFloat, representing the vertical positioning of the card.
     */
-    func getOffset(card: T) -> CGFloat {
+    public func getOffset(card: T) -> CGFloat {
         let index = CGFloat(self.getIndex(type: card))
         let topOffset = CGFloat((index <= 2 ? index : 2 ) * 15)
         return topOffset
