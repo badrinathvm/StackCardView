@@ -20,6 +20,7 @@
 		5BE525FF6FA14B999ED2CCC0AA4FA0CF /* FBSnapshotTestCase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ADA6E655DC84D06359BD0ED5E36C783 /* FBSnapshotTestCase-dummy.m */; };
 		640CCE9C3A28AA3CA15510899F9140EE /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 88B1DEEBF6316A84D7413645212492FF /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67F1963AA7C9EDB78127AD5F566A4949 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 96187BF3038121CC146335E9FF0B0AFF /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		717CD4F12B68491800A5A6A2 /* StackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 717CD4F02B68491800A5A6A2 /* StackCardView.swift */; };
 		74339C58AC4E5631FB8C0E662668A796 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F538C426803AE34255FC6E35B408CCA /* UIApplication+StrictKeyWindow.m */; };
 		7C67CBD15D9B5D0B7769B2F469478332 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B6BE10C665F515606A22FD60C6DCC /* FBSnapshotTestCase.m */; };
 		875A310EAF4D0C136C3FFFF5E0335BE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DA24A38BA9EE106B59E3D4C8DD1CE0E /* UIKit.framework */; };
@@ -27,7 +28,6 @@
 		90C15B75ABE30CF470B55C03A10615F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		9785A36F22665DD3AE679B0D99ED0B07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		9D3C5E2F56838937146191468A893244 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E658F388F01C72599CA75537950B6095 /* XCTest.framework */; };
-		AA5E5BBF636B06093C4A2AEB8A0D95F4 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D1B27AA8B5C3BB70081E99215EA885 /* ReplaceMe.swift */; };
 		ADA7305B0138BC4DF92E9BA1D30C64CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57221B54D014471C3D3E1925EFC917C8 /* Foundation.framework */; };
 		B52281F9F4340D4FC8ABB2FEB1FEC08E /* UIImage+Compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 235A78CFFA6D8B8D86CACD733531CB13 /* UIImage+Compare.m */; };
 		C219ACB5D4E9A6D4BC96F78138ECA96F /* Pods-StackCardView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99853F91A90E0D573ACAA6221BE0B387 /* Pods-StackCardView_Example-dummy.m */; };
@@ -94,7 +94,7 @@
 		656116C8FA5458F45D4707110C9530EC /* UIImage+Compare.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Compare.h"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.h"; sourceTree = "<group>"; };
 		6ABB3EB3CCC5BCA82F40FE8DC87BB778 /* FBSnapshotTestCasePlatform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCasePlatform.m; path = FBSnapshotTestCase/FBSnapshotTestCasePlatform.m; sourceTree = "<group>"; };
 		6F66C890F649097A78DD7EC84FD4EA7F /* Pods-StackCardView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StackCardView_Tests.modulemap"; sourceTree = "<group>"; };
-		71D1B27AA8B5C3BB70081E99215EA885 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = StackCardView/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		717CD4F02B68491800A5A6A2 /* StackCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCardView.swift; sourceTree = "<group>"; };
 		724556D9205563E76FB6C8E11863FFF6 /* Pods-StackCardView_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StackCardView_Tests"; path = Pods_StackCardView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1B7EA746BF6557FD565BAE12AF9198 /* FBSnapshotTestController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestController.m; path = FBSnapshotTestCase/FBSnapshotTestController.m; sourceTree = "<group>"; };
 		8631F67CCDA8CC2A1201A1DF42517DE7 /* Pods-StackCardView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StackCardView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		F6B87423FB929BBC68E5C8EE57813555 /* StackCardView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StackCardView.release.xcconfig; sourceTree = "<group>"; };
 		F7932BB90DD1A2BC70BBB1D6AD9E99AE /* Pods-StackCardView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StackCardView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F7F887026C9E5A26DDB547621F9C9B80 /* StackCardView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StackCardView-prefix.pch"; sourceTree = "<group>"; };
-		FB903A241F5203E94BD4819B3D29E090 /* StackCardView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StackCardView; path = StackCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB903A241F5203E94BD4819B3D29E090 /* StackCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StackCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE661E58CA6655B39AA49AA4C021C33 /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,9 +199,9 @@
 		57668469E6E81423A9234C1F81222936 /* StackCardView */ = {
 			isa = PBXGroup;
 			children = (
-				71D1B27AA8B5C3BB70081E99215EA885 /* ReplaceMe.swift */,
 				85EB04343F7A1171EE032EDC31C2B2BF /* Pod */,
 				E19BBDE51A2E82083573F88C73232A09 /* Support Files */,
+				717CD4F02B68491800A5A6A2 /* StackCardView.swift */,
 			);
 			name = StackCardView;
 			path = ../..;
@@ -223,7 +223,7 @@
 				5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */,
 				ECF02C9E8988FA539B2AF2706B692838 /* Pods-StackCardView_Example */,
 				724556D9205563E76FB6C8E11863FFF6 /* Pods-StackCardView_Tests */,
-				FB903A241F5203E94BD4819B3D29E090 /* StackCardView */,
+				FB903A241F5203E94BD4819B3D29E090 /* StackCardView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -455,7 +455,7 @@
 			);
 			name = StackCardView;
 			productName = StackCardView;
-			productReference = FB903A241F5203E94BD4819B3D29E090 /* StackCardView */;
+			productReference = FB903A241F5203E94BD4819B3D29E090 /* StackCardView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D06AF8174BD59DFC8DFF1E3982CCDAE4 /* Pods-StackCardView_Example */ = {
@@ -485,6 +485,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A4B31E000D7BD06F639A0B6B787B5D2D = {
+						LastSwiftMigration = 1520;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -543,8 +548,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5E5BBF636B06093C4A2AEB8A0D95F4 /* ReplaceMe.swift in Sources */,
 				D73318A3117B7C5B862E7C2DEDBE2912 /* StackCardView-dummy.m in Sources */,
+				717CD4F12B68491800A5A6A2 /* StackCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +873,7 @@
 			baseConfigurationReference = F6B87423FB929BBC68E5C8EE57813555 /* StackCardView.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -970,6 +976,7 @@
 			baseConfigurationReference = 15E3B49EF068C2E846EA96DED91D6B92 /* StackCardView.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -990,6 +997,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
