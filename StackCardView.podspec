@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Badarinath Venkatnarayansetty' => 'badrinathvm@gmail.com' }
   s.source           = { :git => 'https://github.com/badrinathvm/StackCardView.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/badrivm'
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '14.0'
   s.source_files     = 'Sources/**/*.swift'
   
   # s.resource_bundles = {
