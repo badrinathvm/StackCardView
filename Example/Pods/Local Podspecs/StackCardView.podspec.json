@@ -19,5 +19,5 @@
   "platforms": {
     "ios": "13.0"
   },
-  "source_files": "StackCardView/Classes/**/*"
+  "source_files": "Sources/**/*.swift"
 }
