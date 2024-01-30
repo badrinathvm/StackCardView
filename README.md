@@ -1,15 +1,15 @@
 # StackCardView
 
-### SwiftUI iOS component for showing stack of cards with swipe and button actions
+#### SwiftUI iOS component for showing stack of cards with swipe and button actions
+
+[![Version](https://img.shields.io/cocoapods/v/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
+[![License](https://img.shields.io/cocoapods/l/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
+[![Platform](https://img.shields.io/cocoapods/p/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
 
 <br/>
 <p align="center">
 <img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StepperView"/>
 </p>
-
-[![Version](https://img.shields.io/cocoapods/v/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
-[![License](https://img.shields.io/cocoapods/l/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
-[![Platform](https://img.shields.io/cocoapods/p/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
 
 ## Example
 
