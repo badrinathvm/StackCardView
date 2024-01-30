@@ -30,7 +30,7 @@ pod 'StackCardView'
 
 Badarinath Venkatnarayansetty.Follow and contact me on <a href="https://twitter.com/badrivm">Twitter</a> or <a href="https://www.linkedin.com/in/badarinath-venkatnarayansetty-abb79146/">LinkedIn</a>
 
-<a href="https://www.buymeacoffee.com/badrinathvm" target="_blank"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyX3lxhvUMCEvRrFet45uszxlivnf05lyoVqISke9KBk&s" alt="Buy Me A Coffee" style="height: 51px !important;width: 200px !important;" ></a>
+<a href="https://www.buymeacoffee.com/badrinathvm" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?username=badrinathvm&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" alt="Buy Me A Coffee" style="height: 51px !important;width: 200px !important;" ></a>
 
 ## License
 
