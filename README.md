@@ -29,13 +29,13 @@ pod 'StackCardView'
 ### ViewModifiers 
 
 ```ruby
-.setCardOffset(offset: CGFloat): 
+.setCardOffset(offset: CGFloat)
      Sets the offset of the StackCard based on the calculated offset.
 
-.setCardDisplayType(value: StackCardDisplayType): 
+.setCardDisplayType(value: StackCardDisplayType)
     Sets the display type of the StackCard to either .top or .bottom position.
 
-.setRotationAngle(value: CGFloat): 
+.setRotationAngle(value: CGFloat)
     Sets the rotation angle of the StackCard to `value` degrees.
 
 .onRightSwipe(perform action: @escaping (() -> Void))
