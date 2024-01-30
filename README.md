@@ -32,6 +32,11 @@ Badarinath Venkatnarayansetty.Follow and contact me on <a href="https://twitter.
 
 <a href="https://www.buymeacoffee.com/badrinathvm" target="_blank"><img src="https://img.buymeacoffee.com/button-api/?username=badrinathvm&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00" alt="Buy Me A Coffee" style="height: 51px !important;width: 200px !important;" ></a>
 
+
+## Contribution
+
+Feature requests, bug reports, and pull requests are all welcome. Refer <a href="https://github.com/badrinathvm/StackCardView/blob/master/CONTRIBUTING.md">Contributing Guidelines</a> for more details.
+
 ## License
 
-StackCardView is available under the MIT license. See the LICENSE file for more info.
+StepperView is available under the MIT license. See the [LICENSE](https://github.com/badrinathvm/StackCardView/blob/master/LICENSE) file for more info.
