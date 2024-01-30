@@ -59,7 +59,7 @@ public struct StackCard<Content: View, T: Identifiable>: View {
                 switch true {
                 case isIdEqual(to: buttons.left):
                     withAnimation {
-                        offset = -width * 2
+                        offset = -(width * 2)
                         endSwipeActions()
                         onLeftButtonTap?()
                     }
@@ -84,7 +84,7 @@ public struct StackCard<Content: View, T: Identifiable>: View {
     
     
     private func getRotationAngle()-> Double {
-        offset / (UIScreen.main.bounds.width - 50) * angle
+        offset / (UIScreen.main.bounds.width - Utils.fifty) * angle
     }
     
     private func endSwipeActions() {

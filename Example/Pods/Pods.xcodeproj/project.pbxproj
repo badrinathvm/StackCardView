@@ -11,6 +11,7 @@
 		24881377D085688E47194D81E2E16565 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		369D2BD42EF9E2E1751CA74449B96E31 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01CAB66C327810F38D333944C55D40B5 /* View+Extension.swift */; };
 		4B8E183B196814D1C5D822E5BA490398 /* StackCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A854323439C0C045A33282E6150DD /* StackCardView.swift */; };
+		712FE8612B68C21600923019 /* ViewModifier+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FE8602B68C21600923019 /* ViewModifier+Extension.swift */; };
 		8C20D55C6FACB3BAC86E08ACE14DA16C /* StackCardView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497D6515D3205968A4F5933457BF05F /* StackCardView-dummy.m */; };
 		9DA6A3E077BBB7084EDF8B474A554FAC /* StackCardButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA856E29B6F66ED2204BC4E5EEF465E /* StackCardButtonViewModel.swift */; };
 		9F9110008C1F864CF8D61F47A50297DD /* StackCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E4F53016D013493B12DFE95E63FC5 /* StackCardViewModel.swift */; };
@@ -37,19 +38,20 @@
 		043D4F2175FE5F892E3B44C216D0E427 /* Pods-StackCardView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StackCardView_Example-dummy.m"; sourceTree = "<group>"; };
 		0497D6515D3205968A4F5933457BF05F /* StackCardView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StackCardView-dummy.m"; sourceTree = "<group>"; };
 		0CFFDE3B2B5D720B98C2D9466ADA55A5 /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		1421CF2A4FE38A6C9384C62E0AF0DFE0 /* StackCardView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = StackCardView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		2F2019CAE54591BF83518277C388BA2C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1421CF2A4FE38A6C9384C62E0AF0DFE0 /* StackCardView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = StackCardView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2F2019CAE54591BF83518277C388BA2C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		35225DA239FB4F75098BD8C22B4C072D /* StackCardView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StackCardView.release.xcconfig; sourceTree = "<group>"; };
 		44550BCC7CF33ADBD2A48DAF355D9BD5 /* Pods-StackCardView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StackCardView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		559A854323439C0C045A33282E6150DD /* StackCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StackCardView.swift; path = Sources/StackCardView.swift; sourceTree = "<group>"; };
 		5EA856E29B6F66ED2204BC4E5EEF465E /* StackCardButtonViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StackCardButtonViewModel.swift; sourceTree = "<group>"; };
 		6DA138325537E11BC49761829382F725 /* DragState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DragState.swift; sourceTree = "<group>"; };
+		712FE8602B68C21600923019 /* ViewModifier+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModifier+Extension.swift"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		89ABDAC74DD416ABF7F0D71CCFEB2345 /* StackCardView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = StackCardView.modulemap; sourceTree = "<group>"; };
 		8FA8E76CB5DF1DAFE5D6B3594CF9AA5A /* StackCardView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "StackCardView-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6EBD706B7C814CE35AFF80213DEAE59 /* EnvironmentValues+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extension.swift"; sourceTree = "<group>"; };
-		AAB773F0203FFDC86A95A89A31B74D81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		AAB773F0203FFDC86A95A89A31B74D81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BEEAF91EBB53BD4E39DCA12754A2B11C /* Pods-StackCardView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StackCardView_Example-Info.plist"; sourceTree = "<group>"; };
 		BFC8551365D670A6E5A430913724EBBE /* Pods-StackCardView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StackCardView_Example-umbrella.h"; sourceTree = "<group>"; };
 		CD0E4F53016D013493B12DFE95E63FC5 /* StackCardViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StackCardViewModel.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				A6EBD706B7C814CE35AFF80213DEAE59 /* EnvironmentValues+Extension.swift */,
 				01CAB66C327810F38D333944C55D40B5 /* View+Extension.swift */,
+				712FE8602B68C21600923019 /* ViewModifier+Extension.swift */,
 			);
 			name = Extension;
 			path = Sources/Extension;
@@ -350,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0885107DACF6043BCF0925B41A2F67E /* DragState.swift in Sources */,
+				712FE8612B68C21600923019 /* ViewModifier+Extension.swift in Sources */,
 				AA4A3EC0318633969B397D2339219F8F /* EnvironmentValues+Extension.swift in Sources */,
 				9DA6A3E077BBB7084EDF8B474A554FAC /* StackCardButtonViewModel.swift in Sources */,
 				4B8E183B196814D1C5D822E5BA490398 /* StackCardView.swift in Sources */,
@@ -527,8 +531,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

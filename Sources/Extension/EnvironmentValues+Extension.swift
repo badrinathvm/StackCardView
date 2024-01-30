@@ -15,6 +15,12 @@ public enum StackCardDisplayType: CaseIterable {
 /// Environment values configuration for standard size margins, can be used across the app
 extension EnvironmentValues {
     
+    /// property wrapper  for `StepsKey`
+    var cards: [AnyView] {
+        get { self[StackCardKey.self] }
+        set { self[StackCardKey.self] = newValue }
+    }
+    
     /// property wrapper for `rightSwipe`
     var rightSwipe: (() -> Void)? {
         get { self[RightSwipeKey.self] }
@@ -103,4 +109,9 @@ struct RightButtonKey: EnvironmentKey {
         get { return nil}
         set{}
     }
+}
+
+struct StackCardKey: EnvironmentKey {
+    /// provide a default value for custom dependency
+    static var defaultValue = [AnyView]()
 }
