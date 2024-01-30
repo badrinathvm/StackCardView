@@ -26,6 +26,25 @@ it, simply add the following line to your Podfile:
 pod 'StackCardView'
 ```
 
+### ViewModifiers 
+
+```ruby
+.setCardOffset(offset: CGFloat): 
+     Sets the offset of the StackCard based on the calculated offset.
+
+.setCardDisplayType(value: StackCardDisplayType): 
+    Sets the display type of the StackCard to either .top or .bottom position.
+
+.setRotationAngle(value: CGFloat): 
+    Sets the rotation angle of the StackCard to 20 degrees.
+
+.onRightSwipe(perform action: @escaping (() -> Void))
+     Executes the provided closure when a right swipe gesture is detected
+
+.onLeftSwipe(perform action: @escaping (() -> Void))
+     Executes the provided closure when a left swipe gesture is detected
+```
+
 ## Usage
 
 ``` swift
@@ -51,19 +70,19 @@ struct StackCardModel: StackCardModelProtocol, Identifiable {
 
 // Step 2 : Create a ViewModel `StackCardViewModel` tie it to model in `Step 1`
 @StateObject var viewModel = StackCardViewModel<StackCardModel>()
-
 var body: some View {
     VStack {
         //Step 3:  iterate over the list of cards set in `displayingCards`
         ForEach(viewModel.displayingCards?.reversed() ?? [], id: \.id) { card in
             StackCard(model: card) {
+                // content 
                 Image(card.image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             }
             .setCardOffset(offset: viewModel.getOffset(card: card))
-            .setCardDisplayType(value: .top) // enables the card display type to either `top` or `bottom`
-            .setRotationAngle(value: 20) // set's the swipe rotation angle
+            .setCardDisplayType(value: .top) 
+            .setRotationAngle(value: 20)
             .onRightSwipe {
                 print("Right Swipe \(card.id)")
                 viewModel.removeCard()
@@ -78,10 +97,8 @@ var body: some View {
     .onAppear {
        viewModel.displayingCards = [StackCardModel(id: UUID().uuidString, name: "Park1", image: "park1")]
     }
- }
+  }
 }
- 
-
 ```
 
 ## Author
