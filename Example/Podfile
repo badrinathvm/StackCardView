@@ -4,10 +4,4 @@ platform :ios, '14.0'
 
 target 'StackCardView_Example' do
   pod 'StackCardView', :path => '../'
-
-  target 'StackCardView_Tests' do
-    inherit! :search_paths
-
-    pod 'FBSnapshotTestCase' , '~> 2.1.4'
-  end
 end

@@ -17,7 +17,7 @@
   },
   "social_media_url": "https://twitter.com/badrivm",
   "platforms": {
-    "ios": "13.0"
+    "ios": "14.0"
   },
   "source_files": "Sources/**/*.swift"
 }
