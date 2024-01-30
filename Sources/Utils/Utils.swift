@@ -28,6 +28,8 @@ public struct Utils {
     static let corerRadius: CGFloat = 15.0
     /// constant value for deafult items
     static let defaultValue: CGFloat = 10.0
+    /// constant value for deafult items
+    static let fifty: CGFloat = 10.0
 }
 
 

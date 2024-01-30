@@ -72,7 +72,7 @@ public class StackCardViewModel<T: StackCardModelProtocol>: ObservableObject {
     */
     public func getOffset(card: T) -> CGFloat {
         let index = CGFloat(self.getIndex(type: card))
-        let topOffset = CGFloat((index <= 2 ? index : 2 ) * 15)
+        let topOffset = CGFloat((index <= 2 ? index : 2 ) * Utils.defaultValue)
         return topOffset
     }
 }

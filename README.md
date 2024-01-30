@@ -26,6 +26,64 @@ it, simply add the following line to your Podfile:
 pod 'StackCardView'
 ```
 
+## Usage
+
+``` swift
+import StackCardView
+
+// Step 1: create a model make sure it corresponds to `StackCardModelProtocol`
+struct StackCardModel: StackCardModelProtocol, Identifiable {
+    typealias CardType = StackCardModel
+    
+    // mandate requirement by `StackCardModelProtocol`
+    var id: String
+    
+    // custom properties for your model object
+    var name:String = ""
+    var image: String = ""
+    
+    init(id: String, name: String, image: String) {
+        self.id = id
+        self.name = name
+        self.image = image
+    }
+}
+
+// Step 2 : Create a ViewModel `StackCardViewModel` tie it to model in `Step 1`
+@StateObject var viewModel = StackCardViewModel<StackCardModel>()
+
+var body: some View {
+    VStack {
+        //Step 3:  iterate over the list of cards set in `displayingCards`
+        ForEach(viewModel.displayingCards?.reversed() ?? [], id: \.id) { card in
+            StackCard(model: card) {
+                Image(card.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            }
+            .setCardOffset(offset: viewModel.getOffset(card: card))
+            .setCardDisplayType(value: .top) // enables the card display type to either `top` or `bottom`
+            .setRotationAngle(value: 20) // set's the swipe rotation angle
+            .onRightSwipe {
+                print("Right Swipe \(card.id)")
+                viewModel.removeCard()
+            }
+            .onLeftSwipe {
+                print("Left Swipe \(card.id)")
+                viewModel.removeCard()
+            }
+        }
+        .embedInZStack()
+    }
+    .onAppear {
+       viewModel.displayingCards = [StackCardModel(id: UUID().uuidString, name: "Park1", image: "park1")]
+    }
+ }
+}
+ 
+
+```
+
 ## Author
 
 Badarinath Venkatnarayansetty.Follow and contact me on <a href="https://twitter.com/badrivm">Twitter</a> or <a href="https://www.linkedin.com/in/badarinath-venkatnarayansetty-abb79146/">LinkedIn</a>

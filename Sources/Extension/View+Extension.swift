@@ -48,7 +48,8 @@ public extension View {
         print("** \(log)")
         return EmptyView()
     }
+    
+    func embedInZStack() -> some View {
+        self.modifier(EmbedInZStackModifier())
+    }
 }
-// MARK: - CodeAI Output
-    // *** PLEASE SUBSCRIBE TO GAIN CodeAI ACCESS! ***
-/// To subscribe, open CodeAI MacOS app and tap SUBSCRIBE
