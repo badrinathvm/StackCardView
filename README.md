@@ -84,12 +84,10 @@ var body: some View {
             .setCardDisplayType(value: .top) 
             .setRotationAngle(value: 20)
             .onRightSwipe {
-                print("Right Swipe \(card.id)")
-                viewModel.removeCard()
+                print("Right Swipe")
             }
             .onLeftSwipe {
-                print("Left Swipe \(card.id)")
-                viewModel.removeCard()
+                print("Left Swipe")
             }
         }
         .embedInZStack()
