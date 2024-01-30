@@ -1,27 +1,16 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
   - StackCardView (0.1.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (~> 2.1.4)
   - StackCardView (from `../`)
-
-SPEC REPOS:
-  trunk:
-    - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   StackCardView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  StackCardView: f764b798780e99b39aaa3daba2a75afc593adeac
+  StackCardView: 2a33f182331acf4b1be32d5c3157599e37876312
 
-PODFILE CHECKSUM: 0a060bb8d5df5ef0b3ab59766772c46af0be9a5d
+PODFILE CHECKSUM: 5f58de77084d43ab84e182dc86f3def9848e2e8c
 
 COCOAPODS: 1.15.0
