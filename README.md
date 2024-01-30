@@ -36,7 +36,7 @@ pod 'StackCardView'
     Sets the display type of the StackCard to either .top or .bottom position.
 
 .setRotationAngle(value: CGFloat): 
-    Sets the rotation angle of the StackCard to 20 degrees.
+    Sets the rotation angle of the StackCard to `value` degrees.
 
 .onRightSwipe(perform action: @escaping (() -> Void))
      Executes the provided closure when a right swipe gesture is detected
