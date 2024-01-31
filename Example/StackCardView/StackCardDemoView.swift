@@ -1,11 +1,3 @@
-//
-//  StackCardDemoView.swift
-//  StackCardView_Example
-//
-//  Created by Rani Badri on 1/29/24.
-//  Copyright © 2024 CocoaPods. All rights reserved.
-//
-
 import Foundation
 import SwiftUI
 import StackCardView
@@ -28,37 +20,34 @@ struct StackCardModel: StackCardModelProtocol, Identifiable {
 }
 
 
-
 struct StackCardDemoView: View {
     
-    @StateObject var viewModel = StackCardViewModel<StackCardModel>()
+    @State private var stackCardModels:[StackCardModel] = []
     
     var body: some View {
         VStack {
             /// iterate over the list of cards
-            ForEach(viewModel.displayingCards?.reversed() ?? [], id: \.id) { card in
+            ForEach(stackCardModels.reversed(), id: \.id) { card in
                 StackCard(model: card) {
                     // content
                     Image(card.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 }
-                .setCardOffset(offset: viewModel.getOffset(card: card))
                 .setCardDisplayType(value: .bottom)
                 .setRotationAngle(value: 20)
                 .onRightSwipe {
                     print("Right Swipe \(card.id)")
-                    viewModel.removeCard()
                 }
                 .onLeftSwipe {
                     print("left Swipe \(card.id)")
-                    viewModel.removeCard()
                 }
             }
             .embedInZStack()
+            .bind(model: stackCardModels)
             
             //empty State View
-            if viewModel.displayingCards?.isEmpty ?? true {
+            if stackCardModels.isEmpty {
                 Text("Come back later we can find more matches for you!")
                     .font(.caption)
                     .foregroundColor(.gray)
@@ -68,7 +57,7 @@ struct StackCardDemoView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .frame(height: UIScreen.main.bounds.size.height - 200)
         .onAppear {
-            viewModel.displayingCards = [
+            stackCardModels = [
                 StackCardModel(id: UUID().uuidString, name: "Park1", image: "park1"),
                 StackCardModel(id: UUID().uuidString, name: "Park2", image: "park2"),
                 StackCardModel(id: UUID().uuidString,name: "Park3", image: "park3"),

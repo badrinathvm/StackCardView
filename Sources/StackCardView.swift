@@ -2,25 +2,26 @@
 //  StackCardView.swift
 //  StackCardView
 //
-//  Created by Rani Badri on 1/29/24.
+//  Created by Badarinath Venkatnarayansetty on 1/29/24.
 //
 
 import Foundation
 import SwiftUI
 
-
-public struct StackCard<Content: View, T: Identifiable>: View {
+public struct StackCard<Content: View, T: Identifiable & StackCardModelProtocol>: View {
     private var content: () -> Content
     private var model: T
+    
+    @StateObject private var viewModel = StackCardViewModel<T>()
     
     @State var offset:CGFloat = 0.0
     @State var endSwipe: Bool = false
     
+    @Environment(\.stackCardModels) var stackCardModels
+    
     @Environment(\.rightSwipe) var onRightSwipe
     
     @Environment(\.leftSwipe) var onLeftSwipe
-    
-    @Environment(\.cardOffset) var cardOffset
     
     @Environment(\.rotationAngle) var angle
     
@@ -43,6 +44,7 @@ public struct StackCard<Content: View, T: Identifiable>: View {
     
     public var body: some View {
         GeometryReader { proxy in
+            let cardOffset = viewModel.getOffset(card: model)
             ZStack {
                 content()
                     .frame(width: proxy.size.width - cardOffset, height: proxy.size.height)
@@ -71,6 +73,11 @@ public struct StackCard<Content: View, T: Identifiable>: View {
                     }
                 default:
                     break
+                }
+            }
+            .onAppear {
+                if let typedModels = stackCardModels as? [T] {
+                    viewModel.displayingCards = typedModels
                 }
             }
         }
@@ -115,6 +122,7 @@ extension StackCard {
                     if checkingStatus > (width/2) {
                         offset = (translation > 0 ? width : -width) * 2
                         endSwipeActions()
+                        viewModel.removeCard()
                         _ = translation > 0 ? onRightSwipe?() : onLeftSwipe?()
                     } else {
                         offset = .zero
