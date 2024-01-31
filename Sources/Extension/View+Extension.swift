@@ -1,10 +1,3 @@
-//
-//  View+Extension.swift
-//  StackCardView
-//
-//  Created by Rani Badri on 1/29/24.
-//
-
 import Foundation
 import SwiftUI
 
@@ -31,10 +24,6 @@ public extension View {
         self.environment(\EnvironmentValues.leftButton, action)
     }
     
-    func setCardOffset(offset: CGFloat) -> some View {
-        self.environment(\EnvironmentValues.cardOffset, offset)
-    }
-    
     func setRotationAngle(value: Double) -> some View {
         self.environment(\EnvironmentValues.rotationAngle, value)
     }
@@ -51,5 +40,9 @@ public extension View {
     
     func embedInZStack() -> some View {
         self.modifier(EmbedInZStackModifier())
+    }
+    
+    func bind(model: [any StackCardModelProtocol]) -> some View {
+        self.environment(\EnvironmentValues.stackCardModels, model)
     }
 }

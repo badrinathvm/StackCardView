@@ -1,10 +1,3 @@
-//
-//  EnvironmentValues+Extension.swift
-//  StackCardView
-//
-//  Created by Rani Badri on 1/29/24.
-//
-
 import Foundation
 import SwiftUI
 
@@ -19,6 +12,12 @@ extension EnvironmentValues {
     var cards: [AnyView] {
         get { self[StackCardKey.self] }
         set { self[StackCardKey.self] = newValue }
+    }
+    
+    /// property wrapper  for `StepsKey`
+    var stackCardModels: [any StackCardModelProtocol] {
+        get { self[StackCardModelKey.self] }
+        set { self[StackCardModelKey.self] = newValue }
     }
     
     /// property wrapper for `rightSwipe`
@@ -45,12 +44,6 @@ extension EnvironmentValues {
         set { self[LeftButtonKey.self] = newValue }
     }
     
-    /// property wrapper for `cardOffset`
-    var cardOffset: CGFloat {
-        get { self[CardOffsetKey.self] }
-        set { self[CardOffsetKey.self] = newValue }
-    }
-    
     /// property wrapper for `rotationAngle`
     var rotationAngle: Double {
         get { self[RotationAngleKey.self] }
@@ -64,10 +57,6 @@ extension EnvironmentValues {
     }
 }
 
-/// Environment Key for `CardOffset`
-struct CardOffsetKey: EnvironmentKey {
-    static var defaultValue: CGFloat = 0.0
-}
 
 /// Environment Key for `CardDisplay`
 struct CardDisplayKey: EnvironmentKey {
@@ -114,4 +103,9 @@ struct RightButtonKey: EnvironmentKey {
 struct StackCardKey: EnvironmentKey {
     /// provide a default value for custom dependency
     static var defaultValue = [AnyView]()
+}
+
+struct StackCardModelKey: EnvironmentKey {
+    /// provide a default value for custom dependency
+    static var defaultValue = [any StackCardModelProtocol]()
 }
