@@ -12,7 +12,7 @@ public struct StackCard<Content: View, T: Identifiable & StackCardModelProtocol>
     private var content: () -> Content
     private var model: T
     
-    @StateObject private var viewModel = StackCardViewModel<T>()
+    @ObservedObject private var viewModel: StackCardViewModel<T>
     
     @State var offset:CGFloat = 0.0
     @State var endSwipe: Bool = false
@@ -33,11 +33,14 @@ public struct StackCard<Content: View, T: Identifiable & StackCardModelProtocol>
     
     @GestureState private var dragState: DragState = DragState.inactive
     
-    @ObservedObject private var stackCardButtonPublisher: StackCardButtonProperties
+    @ObservedObject private var stackCardButtonPublisher: StackCardButtonPublisher
     
-    public init(model: T, stackCardButtonPublisher: StackCardButtonProperties? = nil, @ViewBuilder content: @escaping () -> Content) {
+    public init(model: T, viewModel: StackCardViewModel<T>, 
+                stackCardButtonPublisher: StackCardButtonPublisher? = nil,
+                @ViewBuilder content: @escaping () -> Content) {
         self.model = model
-        self.stackCardButtonPublisher = stackCardButtonPublisher ?? StackCardButtonProperties()
+        self.viewModel = viewModel
+        self.stackCardButtonPublisher = stackCardButtonPublisher ?? StackCardButtonPublisher()
         self.content = content
     }
     
@@ -56,20 +59,27 @@ public struct StackCard<Content: View, T: Identifiable & StackCardModelProtocol>
             .rotationEffect(.init(degrees: getRotationAngle())) //controls the rotation angle.
             .contentShape(Circle().trim(from: 0, to: endSwipe ? 0 : 1)) //Users can enable second card too, so we are setting the shape.
             .gesture(dragGesture)
-            .onReceive(stackCardButtonPublisher.$buttons) { buttons in
+            .onReceive(stackCardButtonPublisher.$direction) { direction in
                 let width = UIScreen.main.bounds.width - Utils.defaultValue
-                switch true {
-                case isIdEqual(to: buttons.left):
-                    withAnimation {
-                        offset = -(width * 2)
-                        endSwipeActions()
-                        onLeftButtonTap?()
+                guard let first = viewModel.displayingCards?.first else { return }
+                switch direction {
+                case .left:
+                    if isIdEqual(to: first.id) {
+                        withAnimation {
+                            offset = -(width * 2)
+                            endSwipeActions()
+                            viewModel.removeCard()
+                            onLeftButtonTap?()
+                        }
                     }
-                case isIdEqual(to: buttons.right):
-                    withAnimation {
-                        offset = width * 2
-                        endSwipeActions()
-                        onRightButtonTap?()
+                case .right:
+                    if isIdEqual(to: first.id) {
+                        withAnimation {
+                            offset = width * 2
+                            endSwipeActions()
+                            viewModel.removeCard()
+                            onRightButtonTap?()
+                        }
                     }
                 default:
                     break

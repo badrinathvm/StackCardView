@@ -1,35 +1,25 @@
+//
+//  StackCardWithButtonsView.swift
+//  StackCardView_Example
+//
+//  Created by Rani Badri on 1/31/24.
+//  Copyright © 2024 CocoaPods. All rights reserved.
+//
+
 import Foundation
 import SwiftUI
 import StackCardView
 
-//Step 1:
-
-// create a model make sure it corresponds to `StackCardModelProtocol`
-struct StackCardModel: StackCardModelProtocol, Identifiable {
-    typealias CardType = StackCardModel
-    
-    var id: String
-    var name:String = ""
-    var image: String = ""
-    
-    init(id: String, name: String, image: String) {
-        self.id = id
-        self.name = name
-        self.image = image
-    }
-}
-
-
-struct StackCardDemoView: View {
+struct StackCardButtonView: View {
     @State private var stackCardModels:[StackCardModel] = []
-    
     @StateObject private var viewModel = StackCardViewModel<StackCardModel>()
-        
+    @StateObject private var stackCardButtonPublisher = StackCardButtonPublisher()
+    
     var body: some View {
         VStack {
             /// iterate over the list of cards
             ForEach(stackCardModels.reversed(), id: \.id) { card in
-                StackCard(model: card, viewModel: viewModel) {
+                StackCard(model: card, viewModel: viewModel, stackCardButtonPublisher: stackCardButtonPublisher) {
                     // content
                     Image(card.image)
                         .resizable()
@@ -59,10 +49,40 @@ struct StackCardDemoView: View {
                     .font(.caption)
                     .foregroundColor(.gray)
             }
+            
+            
+            HStack {
+                Button(action: {
+                    stackCardButtonPublisher.setDirection(direction: StackCardDirection.left)
+                }, label: {
+                    Text("Keep Unread")
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(Color.black)
+                        .cornerRadius(8)
+                    
+                })
+                
+                Spacer()
+                
+                Button {
+                    stackCardButtonPublisher.setDirection(direction: StackCardDirection.right)
+                } label: {
+                    Text("Mark As read")
+                        .foregroundColor(.black)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(8)
+                }
+            }
+            .padding(.all, 10)
+            .padding(.top, 30)
         }
         .padding(.all, 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .frame(height: UIScreen.main.bounds.size.height - 200)
+        .frame(height: UIScreen.main.bounds.size.height - 100)
         .onAppear {
             stackCardModels = [
                 StackCardModel(id: UUID().uuidString, name: "Park1", image: "park1"),
@@ -73,3 +93,4 @@ struct StackCardDemoView: View {
         }
     }
 }
+
