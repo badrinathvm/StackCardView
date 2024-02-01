@@ -21,14 +21,15 @@ struct StackCardModel: StackCardModelProtocol, Identifiable {
 
 
 struct StackCardDemoView: View {
-    
     @State private var stackCardModels:[StackCardModel] = []
+    @StateObject private var viewModel = StackCardViewModel<StackCardModel>()
+    @StateObject private var stackCardButtonPublisher = StackCardButtonPublisher()
     
     var body: some View {
         VStack {
             /// iterate over the list of cards
             ForEach(stackCardModels.reversed(), id: \.id) { card in
-                StackCard(model: card) {
+                StackCard(model: card, viewModel: viewModel, stackCardButtonPublisher: stackCardButtonPublisher) {
                     // content
                     Image(card.image)
                         .resizable()
@@ -42,12 +43,18 @@ struct StackCardDemoView: View {
                 .onLeftSwipe {
                     print("left Swipe \(card.id)")
                 }
+                .onLeftButtonTap {
+                    print("Left Button Tap \(card.id)")
+                }
+                .onRightButtonTap {
+                    print("Right Button Tap \(card.id)")
+                }
             }
             .embedInZStack()
             .bind(model: stackCardModels)
             
             //empty State View
-            if stackCardModels.isEmpty {
+            if viewModel.displayingCards?.isEmpty ?? false {
                 Text("Come back later we can find more matches for you!")
                     .font(.caption)
                     .foregroundColor(.gray)
@@ -64,5 +71,35 @@ struct StackCardDemoView: View {
                 StackCardModel(id: UUID().uuidString,name: "Park4", image: "park4")
             ]
         }
+        
+        
+        HStack {
+            Button(action: {
+                stackCardButtonPublisher.setDirection(direction: StackCardDirection.left)
+            }, label: {
+                Text("Keep Unread")
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background(Color.black)
+                    .cornerRadius(8)
+                
+            })
+            
+            Spacer()
+            
+            Button {
+                stackCardButtonPublisher.setDirection(direction: StackCardDirection.right)
+            } label: {
+                Text("Mark As read")
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+            }
+        }
+        .padding(.horizontal, 40)
+        .padding(.top)
     }
 }

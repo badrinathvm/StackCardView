@@ -1,18 +1,29 @@
 import Foundation
 import Combine
 
-public class StackCardButtonProperties: ObservableObject {
-    @Published var buttons: (left: String, right: String) = ("", "")
+public enum StackCardDirection: CaseIterable {
+    case left, right
+}
+
+public class StackCardButtonPublisher: ObservableObject {
+   // @Published var buttons: (left: String, right: String) = ("", "")
+    @Published var direction: StackCardDirection?
     
-    public init(left: String = "", right: String = "") {
-        self.buttons = (left, right)
+    public init() { }
+    
+    public func setDirection(direction: StackCardDirection) {
+        self.direction = direction
     }
     
-    public func setLeftButton(for id: String) {
-        self.buttons.left = id
-    }
+//    public init(left: String = "", right: String = "") {
+//        self.buttons = (left, right)
+//    }
     
-    public func setRightButton(for id: String) {
-        self.buttons.left = id
-    }
+//    public func setLeftButton(for id: String) {
+//        self.buttons.left = id
+//    }
+//    
+//    public func setRightButton(for id: String) {
+//        self.buttons.left = id
+//    }
 }
