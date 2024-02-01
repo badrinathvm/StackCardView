@@ -7,13 +7,17 @@
 [![Platform](https://img.shields.io/cocoapods/p/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
 
 
-<table>
- <tr>
-    <td><img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StackCardView"/></td>
-    <td><img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardWithButtons.gif" height="450" alt="StackCardViewWithButtons"/></td>
- </tr>
-</table>
+### Swipe Actions
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StackCardView"/>
+</p>
+
+### With Buttons 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardWithButtons.gif" height="450" alt="StackCardViewWithButtons"/>
+</p>
 
 </p>
 
