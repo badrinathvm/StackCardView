@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StackCardView'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'UI component for stack of cards'
   s.description      = 'SwiftUI component for displaying the list of cards with swipe gesutures and button actions'
   s.homepage         = 'https://github.com/badrinathvm/StackCardView'

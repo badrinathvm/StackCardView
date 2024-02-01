@@ -6,14 +6,15 @@
 [![License](https://img.shields.io/cocoapods/l/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
 [![Platform](https://img.shields.io/cocoapods/p/StackCardView.svg?style=flat)](https://cocoapods.org/pods/StackCardView)
 
-<br/>
-<p align="center">
-<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StackCardView"/>
-</p>
 
-<br/>
-<p align="center">
-<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardWithButtons.gif" height="450" alt="StackCardViewWithButtons"/>
+<table>
+ <tr>
+    <td><img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StackCardView"/></td>
+    <td><img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardWithButtons.gif" height="450" alt="StackCardViewWithButtons"/></td>
+ </tr>
+</table>
+
+
 </p>
 
 ## Example
