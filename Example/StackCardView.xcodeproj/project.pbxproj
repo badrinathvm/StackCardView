@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		712FE8292B6858E500923019 /* StackCardDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FE8282B6858E500923019 /* StackCardDemoView.swift */; };
+		712FE8642B6B610E00923019 /* StackCardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FE8632B6B610E00923019 /* StackCardButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		676E58D48FC9FFC1A07BBA81 /* Pods_StackCardView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackCardView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		712FE8282B6858E500923019 /* StackCardDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCardDemoView.swift; sourceTree = "<group>"; };
+		712FE8632B6B610E00923019 /* StackCardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCardButtonView.swift; sourceTree = "<group>"; };
 		B6FE68BE563F9126C6FCCDDE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C80498C57BC4EC2A1BE20A00 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CB4C86EA9E2E89C83A41E822 /* StackCardView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = StackCardView.podspec; path = ../StackCardView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -114,6 +116,7 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				712FE8282B6858E500923019 /* StackCardDemoView.swift */,
+				712FE8632B6B610E00923019 /* StackCardButtonView.swift */,
 			);
 			name = "Example for StackCardView";
 			path = StackCardView;
@@ -306,6 +309,7 @@
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				712FE8292B6858E500923019 /* StackCardDemoView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				712FE8642B6B610E00923019 /* StackCardButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,12 @@
 
 <br/>
 <p align="center">
-<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StepperView"/>
+<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardView.gif" height="450" alt="StackCardView"/>
+</p>
+
+<br/>
+<p align="center">
+<img src="https://raw.githubusercontent.com/badrinathvm/StackCardView/master/images/StackCardWithButtons.gif" height="450" alt="StackCardViewWithButtons"/>
 </p>
 
 ## Example
@@ -70,10 +75,12 @@ struct StackCardModel: StackCardModelProtocol, Identifiable {
 
 
 @State private var stackCardModels:[StackCardModel] =[]
+@StateObject private var viewModel = StackCardViewModel<StackCardModel>()
+
 var body: some View {
     VStack {
         ForEach(stackCardModels.reversed(), id: \.id) { card in
-            StackCard(model: card) {
+            StackCard(model: card, viewModel: viewModel) {
                 // content 
                 Image(card.image)
                     .resizable()

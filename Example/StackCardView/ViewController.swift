@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let stackCardView = UIHostingController(rootView: StackCardDemoView())
+        let stackCardView = UIHostingController(rootView: ContentView())
         stackCardView.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stackCardView.view)
         
@@ -32,6 +32,24 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            StackCardDemoView()
+                .tabItem {
+                    Image(systemName: "square.stack.3d.up.fill")
+                    Text("First Tab")
+                }
+            
+            StackCardButtonView()
+                .tabItem {
+                    Image(systemName: "square.stack.3d.up.fill")
+                    Text("Second Tab")
+                }
+        }
     }
 }
 
