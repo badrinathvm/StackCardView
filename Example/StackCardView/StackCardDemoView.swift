@@ -5,7 +5,7 @@ import StackCardView
 //Step 1:
 
 // create a model make sure it corresponds to `StackCardModelProtocol`
-struct StackCardModel: StackCardModelProtocol, Identifiable {
+struct StackCardModel: Identifiable {
     typealias CardType = StackCardModel
     
     var id: String
@@ -21,40 +21,36 @@ struct StackCardModel: StackCardModelProtocol, Identifiable {
 
 
 struct StackCardDemoView: View {
-    @State private var stackCardModels:[StackCardModel] = []
-    
-    @StateObject private var viewModel = StackCardViewModel<StackCardModel>()
+    @State private var stackCardModels: [StackCardModel] = []
         
     var body: some View {
-        VStack {
-            /// iterate over the list of cards
-            ForEach(stackCardModels.reversed(), id: \.id) { card in
-                StackCard(model: card, viewModel: viewModel) {
-                    // content
-                    Image(card.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                }
-                .setCardDisplayType(value: .bottom)
-                .setRotationAngle(value: 20)
-                .onRightSwipe {
-                    print("Right Swipe \(card.id)")
-                }
-                .onLeftSwipe {
-                    print("left Swipe \(card.id)")
-                }
-                .onLeftButtonTap {
-                    print("Left Button Tap \(card.id)")
-                }
-                .onRightButtonTap {
-                    print("Right Button Tap \(card.id)")
+        ZStack {
+            // iterate over the list of cards
+            StackCard($stackCardModels) { card in
+                Image(card.image)
+                    .resizable()
+            } overlay: { gesture in
+                ZStack {
+                    Rectangle()
+                        .fill(gesture.swipeDirection == .left ? Color.red : Color.green)
+                        .opacity(gesture.offset)
+                    
+                    if gesture.offset > 0 {
+                        Text(gesture.swipeDirection == .left ? "Keep unread" : "Mark as read")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                    }
                 }
             }
-            .embedInZStack()
-            .bind(model: stackCardModels)
+            .onCardDragged { gesture in
+                print("Card swiped in \(gesture.swipeDirection) direction with \(gesture.offset)")
+            }
+            .onCardSwiped { swipeDirection in
+                print("Card swiped to the \(swipeDirection)")
+            }
             
             //empty State View
-            if viewModel.displayingCards?.isEmpty ?? false {
+            if stackCardModels.isEmpty {
                 Text("Come back later we can find more matches for you!")
                     .font(.caption)
                     .foregroundColor(.gray)
@@ -72,4 +68,8 @@ struct StackCardDemoView: View {
             ]
         }
     }
+}
+
+#Preview {
+    StackCardDemoView()
 }

@@ -30,3 +30,14 @@ enum DragState {
         }
     }
 }
+
+/// The attributes of a card drag gesture.
+public struct StackCardGesture {
+    public var swipeDirection: SwipeDirection
+    public var offset: CGFloat
+}
+
+/// Supported swipe directions.
+public enum SwipeDirection {
+    case left, right
+}

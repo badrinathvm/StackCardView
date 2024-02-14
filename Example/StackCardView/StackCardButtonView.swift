@@ -11,49 +11,37 @@ import SwiftUI
 import StackCardView
 
 struct StackCardButtonView: View {
-    @State private var stackCardModels:[StackCardModel] = []
-    @StateObject private var viewModel = StackCardViewModel<StackCardModel>()
-    @StateObject private var stackCardButtonPublisher = StackCardButtonPublisher()
+    @State private var stackCardModels: [StackCardModel] = []
+    @Environment(\.swipeCard) private var swipeCard
     
     var body: some View {
         VStack {
-            /// iterate over the list of cards
-            ForEach(stackCardModels.reversed(), id: \.id) { card in
-                StackCard(model: card, viewModel: viewModel, stackCardButtonPublisher: stackCardButtonPublisher) {
-                    // content
+            ZStack {
+                /// iterate over the list of cards
+                StackCard($stackCardModels) { card in
                     Image(card.image)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                 }
-                .setCardDisplayType(value: .bottom)
-                .setRotationAngle(value: 20)
-                .onRightSwipe {
-                    print("Right Swipe \(card.id)")
+                .onCardDragged { gesture in
+                    print("Card swiped in \(gesture.swipeDirection) direction with \(gesture.offset)")
                 }
-                .onLeftSwipe {
-                    print("left Swipe \(card.id)")
+                .onCardSwiped { swipeDirection in
+                    print("Card swiped to the \(swipeDirection)")
                 }
-                .onLeftButtonTap {
-                    print("Left Button Tap \(card.id)")
+                
+                //empty State View
+                if stackCardModels.isEmpty {
+                    Text("Come back later we can find more matches for you!")
+                        .font(.caption)
+                        .foregroundColor(.gray)
                 }
-                .onRightButtonTap {
-                    print("Right Button Tap \(card.id)")
-                }
-            }
-            .embedInZStack()
-            .bind(model: stackCardModels)
-            
-            //empty State View
-            if viewModel.displayingCards?.isEmpty ?? false {
-                Text("Come back later we can find more matches for you!")
-                    .font(.caption)
-                    .foregroundColor(.gray)
             }
             
             
             HStack {
                 Button(action: {
-                    stackCardButtonPublisher.setDirection(direction: StackCardDirection.left)
+                    swipeCard?(.left)
                 }, label: {
                     Text("Keep Unread")
                         .foregroundColor(.white)
@@ -67,7 +55,7 @@ struct StackCardButtonView: View {
                 Spacer()
                 
                 Button {
-                    stackCardButtonPublisher.setDirection(direction: StackCardDirection.right)
+                    swipeCard?(.right)
                 } label: {
                     Text("Mark As read")
                         .foregroundColor(.black)

@@ -1,5 +1,5 @@
 PODS:
-  - StackCardView (0.1.0)
+  - StackCardView (0.1.2)
 
 DEPENDENCIES:
   - StackCardView (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  StackCardView: 2a33f182331acf4b1be32d5c3157599e37876312
+  StackCardView: 8fd9eca5307dcf6e299c23806815482f2f06c258
 
 PODFILE CHECKSUM: 5f58de77084d43ab84e182dc86f3def9848e2e8c
 
-COCOAPODS: 1.15.0
+COCOAPODS: 1.15.2

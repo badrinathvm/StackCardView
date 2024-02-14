@@ -14,36 +14,6 @@ extension EnvironmentValues {
         set { self[StackCardKey.self] = newValue }
     }
     
-    /// property wrapper  for `StepsKey`
-    var stackCardModels: [any StackCardModelProtocol] {
-        get { self[StackCardModelKey.self] }
-        set { self[StackCardModelKey.self] = newValue }
-    }
-    
-    /// property wrapper for `rightSwipe`
-    var rightSwipe: (() -> Void)? {
-        get { self[RightSwipeKey.self] }
-        set { self[RightSwipeKey.self] = newValue }
-    }
-    
-    /// property wrapper for `leftSwipe`
-    var leftSwipe: (() -> Void)? {
-        get { self[LeftSwipeKey.self] }
-        set { self[LeftSwipeKey.self] = newValue }
-    }
-    
-    /// property wrapper for `rightButton`
-    var rightButton: (() -> Void)? {
-        get { self[RightButtonKey.self] }
-        set { self[RightButtonKey.self] = newValue }
-    }
-    
-    /// property wrapper for `leftButton`
-    var leftButton: (() -> Void)? {
-        get { self[LeftButtonKey.self] }
-        set { self[LeftButtonKey.self] = newValue }
-    }
-    
     /// property wrapper for `rotationAngle`
     var rotationAngle: Double {
         get { self[RotationAngleKey.self] }
@@ -68,44 +38,7 @@ struct RotationAngleKey: EnvironmentKey {
     static var defaultValue: Double = 10.0
 }
 
-/// Environment Key for `RightSwipe` action
-struct RightSwipeKey: EnvironmentKey {
-    static var defaultValue: (() -> Void)? {
-        get {return nil}
-        set {}
-    }
-}
-
-/// Environment Key for `LeftSwipe` action
-struct LeftSwipeKey: EnvironmentKey {
-    static var defaultValue: ( () -> Void)? {
-        get { return nil}
-        set{}
-    }
-}
-
-/// Environment Key for `LeftButton` action
-struct LeftButtonKey: EnvironmentKey {
-    static var defaultValue: ( () -> Void)? {
-        get { return nil}
-        set{}
-    }
-}
-
-/// Environment Key for `RightButton` action
-struct RightButtonKey: EnvironmentKey {
-    static var defaultValue: ( () -> Void)? {
-        get { return nil}
-        set{}
-    }
-}
-
 struct StackCardKey: EnvironmentKey {
     /// provide a default value for custom dependency
     static var defaultValue = [AnyView]()
-}
-
-struct StackCardModelKey: EnvironmentKey {
-    /// provide a default value for custom dependency
-    static var defaultValue = [any StackCardModelProtocol]()
 }
